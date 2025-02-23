@@ -395,7 +395,7 @@ class TPGGAutoencoder(Autoencoder):
         num_classes = 4  # define the number of classes(change to arg in the future
         classifier_output = Dense(num_classes, activation='softmax', name='classifier')(self.encoder_output)
 
-        self.model = Model(inputs=[self.input_layer, self.sf_layer], outputs=output[output, classifier_output])
+        self.model = Model(inputs=[self.input_layer, self.sf_layer], outputs=[output, classifier_output])
 
         self.encoder = self.get_encoder()
 
